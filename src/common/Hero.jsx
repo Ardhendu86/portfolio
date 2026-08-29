@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Typed from 'typed.js';
-import profileImg from '../assets/images/profile/profile-2.webp';
+import profileImg from '../assets/images/profile/ardhendu2.png';
 import { HoloIcon, HoloProjector, HoloBadge, HoloGridBackground } from './Hologram';
 
 /**
@@ -16,8 +16,8 @@ const Hero = () => {
       strings: [
         'Full Stack Software Developer',
         'React.js Developer',
-        'Java & Spring Boot Developer',
-        'Web Developer'
+        'Laravel & CodeIgniter Developer',
+        'Node.js & Express Developer'
       ],
       typeSpeed: 60,
       backSpeed: 40,
@@ -59,7 +59,7 @@ const Hero = () => {
             </p>
 
             <p className="lead mb-4 opacity-75" style={{ maxWidth: '600px' }}>
-              I enjoy building responsive, scalable, and user-friendly web applications. With expertise in React.js, Java, Spring Boot, and databases, I am continuously learning and refining modern web solutions.
+              I enjoy building responsive, scalable, and user-friendly web applications. With expertise in React.js, Laravel, CodeIgniter 3, Node.js, Express, and modern databases, I am continuously learning and refining modern web solutions.
             </p>
 
             {/* CTA Buttons with Holographic icons */}
@@ -92,9 +92,9 @@ const Hero = () => {
             <HoloProjector
               orbitSymbols={[
                 { symbol: '⚛', label: 'React.js', variant: 'cyan', style: { top: '-12px', left: '-20px' } },
-                { symbol: '☕', label: 'Java', variant: 'neon', style: { top: '30%', right: '-30px' } },
-                { symbol: '⚡', label: 'Spring Boot', variant: 'emerald', style: { bottom: '40px', left: '-25px' } },
-                { symbol: '🗄️', label: 'SQL DB', variant: 'cyan', style: { bottom: '-15px', right: '20px' } },
+                { symbol: '🔴', label: 'Laravel', variant: 'neon', style: { top: '30%', right: '-30px' } },
+                { symbol: '🚀', label: 'Express.js', variant: 'emerald', style: { bottom: '40px', left: '-25px' } },
+                { symbol: '🗄️', label: 'PostgreSQL', variant: 'cyan', style: { bottom: '-15px', right: '20px' } },
               ]}
             >
               <img

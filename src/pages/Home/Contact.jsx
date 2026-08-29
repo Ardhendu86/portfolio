@@ -51,7 +51,7 @@ const Contact = () => {
               <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-envelope-fill" size="md" variant="cyan" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">Email</h5>
                     <a href="mailto:ardhendu.bag@example.com" className="text-info text-decoration-none small">
                       ardhendu.bag@example.com
@@ -64,7 +64,7 @@ const Contact = () => {
               <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-telephone-fill" size="md" variant="neon" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">Phone</h5>
                     <a href="tel:+919876543210" className="text-info text-decoration-none small">
                       +91 98765 43210
@@ -77,7 +77,7 @@ const Contact = () => {
               <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-linkedin" size="md" variant="blue" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">LinkedIn</h5>
                     <a
                       href="https://linkedin.com/in/ardhendubag"
@@ -95,7 +95,7 @@ const Contact = () => {
               <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-github" size="md" variant="emerald" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">GitHub</h5>
                     <a
                       href="https://github.com/ardhendubag"
@@ -113,9 +113,9 @@ const Contact = () => {
               <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-geo-alt-fill" size="md" variant="amber" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">Location</h5>
-                    <p className="small mb-0 opacity-75">
+                    <p className="small mb-0">
                       Hooghly / Kalyani, West Bengal, India
                     </p>
                   </div>
@@ -127,8 +127,8 @@ const Contact = () => {
           {/* Contact Form */}
           <div className="col-lg-7" data-aos="fade-left" data-aos-delay="200">
             <div className="card theme-card holo-card rounded-4 p-4 shadow-sm">
-              <h3 className="fw-bold fs-4 mb-3">Send a Message</h3>
-              <p className="small mb-4 opacity-75">
+              <h3 className="fw-bold fs-4 mb-3 theme-contrast-text">Send a Message</h3>
+              <p className="small mb-4 theme-contrast-text">
                 Have a question or want to discuss a software project? Feel free to reach out using the form below.
               </p>
 
@@ -142,7 +142,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit}>
                 <div className="row g-3">
                   <div className="col-md-6">
-                    <label className="form-label small fw-semibold">Your Name</label>
+                    <label className="form-label small fw-semibold theme-contrast-text">Your Name</label>
                     <input
                       type="text"
                       className="form-control"
@@ -154,7 +154,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label small fw-semibold">Your Email</label>
+                    <label className="form-label small fw-semibold theme-contrast-text">Your Email</label>
                     <input
                       type="email"
                       className="form-control"
@@ -166,7 +166,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="col-12">
-                    <label className="form-label small fw-semibold">Subject</label>
+                    <label className="form-label small fw-semibold theme-contrast-text">Subject</label>
                     <input
                       type="text"
                       className="form-control"
@@ -178,7 +178,7 @@ const Contact = () => {
                     />
                   </div>
                   <div className="col-12">
-                    <label className="form-label small fw-semibold">Message</label>
+                    <label className="form-label small fw-semibold theme-contrast-text">Message</label>
                     <textarea
                       className="form-control"
                       rows="4"

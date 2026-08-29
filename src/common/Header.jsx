@@ -112,7 +112,7 @@ const Header = () => {
                 <i className="bi bi-person me-1"></i> About
               </NavLink>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <NavLink
                 to="/projects"
                 className={({ isActive }) => (isActive ? 'nav-link active text-info' : 'nav-link')}
@@ -120,7 +120,7 @@ const Header = () => {
               >
                 <i className="bi bi-laptop me-1"></i> Projects
               </NavLink>
-            </li>
+            </li> */}
             <li className="nav-item">
               <NavLink
                 to="/contact"

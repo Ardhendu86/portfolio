@@ -29,23 +29,23 @@ const Experience = () => {
             <div className="timeline">
               <div className="item holo-card p-4 rounded-4 mb-4 border border-info border-opacity-25">
                 <span className="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 mb-2">
-                  12 August 2024 — Present
+                  12 August 2025 — Present
                 </span>
                 <h4 className="fw-bold fs-5 mb-1">Software Developer</h4>
                 <div className="text-info small fw-semibold mb-2">Codeulas Innovation Pvt. Ltd.</div>
                 <p className="small mb-0 opacity-75">
-                  Working as a Full Stack Software Developer using Java, Spring Boot, React.js, MySQL, PostgreSQL, and REST APIs.
+                  Working as a Software Developer using Laravel, CodeIgniter 3, React.js, Node.js, Express, Redux Toolkit, MySQL, PostgreSQL, and REST APIs.
                 </p>
               </div>
 
               <div className="item holo-card p-4 rounded-4 border border-info border-opacity-25">
                 <span className="badge bg-secondary bg-opacity-25 text-info mb-2">
-                  01 January 2023 — 05 August 2024
+                  01 January 2024 — 12 August 2025
                 </span>
                 <h4 className="fw-bold fs-5 mb-1">Web Developer</h4>
-                <div className="text-info small fw-semibold mb-2">Softech Company</div>
+                <div className="text-info small fw-semibold mb-2">AS Softech</div>
                 <p className="small mb-0 opacity-75">
-                  Worked on responsive websites using HTML, CSS, JavaScript, Bootstrap, and React.js.
+                  Worked on responsive websites using HTML, CSS, JavaScript, Bootstrap, and Core PHP.
                 </p>
               </div>
             </div>
@@ -62,10 +62,10 @@ const Experience = () => {
                 <span className="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 mb-2">
                   Completed in 2022
                 </span>
-                <h4 className="fw-bold fs-5 mb-1">B.Tech in Computer Science &amp; Engineering</h4>
+                <h4 className="fw-bold fs-5 mb-1">B.Tech in Mechanical Engineering</h4>
                 <div className="text-info small fw-semibold mb-2">Seacom Engineering College</div>
                 <p className="small mb-0 opacity-75">
-                  Completed B.Tech with focus on software engineering, object-oriented programming, data structures, and database systems.
+                  Graduated with a Bachelor of Technology in Mechanical Engineering, building strong analytical thinking, mathematics, and problem-solving foundations.
                 </p>
               </div>
 
@@ -73,10 +73,10 @@ const Experience = () => {
                 <span className="badge bg-secondary bg-opacity-25 text-info mb-2">
                   Completed in 2019
                 </span>
-                <h4 className="fw-bold fs-5 mb-1">Diploma in Engineering</h4>
+                <h4 className="fw-bold fs-5 mb-1">Diploma in Mechanical Engineering</h4>
                 <div className="text-info small fw-semibold mb-2">Kingston Polytechnic College</div>
                 <p className="small mb-0 opacity-75">
-                  Learned web technology basics, core computer science concepts, and practical programming projects.
+                  Completed Diploma in Mechanical Engineering, gaining hands-on practical training, engineering design fundamentals, and applied technical skills.
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ const Experience = () => {
 
         {/* Download Resume Button */}
         <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
-          <a href="/assets/files/Ardhendu_Bag_Resume.txt" download className="btn btn-info btn-lg px-4 py-2 text-white fw-semibold rounded-3 shadow d-inline-flex align-items-center gap-2">
+          <a href="/assets/files/Ardhendu_Bag_Resume.pdf" download="Ardhendu_Bag_Resume.pdf" className="btn btn-info btn-lg px-4 py-2 text-white fw-semibold rounded-3 shadow d-inline-flex align-items-center gap-2">
             <i className="bi bi-download"></i> Download Full Resume
           </a>
         </div>

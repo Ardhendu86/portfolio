@@ -2,3 +2,4 @@ Ardhendu Bag - Full Stack Software Developer Resume
 Location: Hooghly / Kalyani, West Bengal
 Experience: Software Developer at Codeulas Innovation Pvt. Ltd., Web Developer at Softech Company
 Skills: React.js, Java, Spring Boot, SQL, MySQL, PostgreSQL, Bootstrap, JavaScript
+Education: B.Tech in Mechanical Engineering (2022) - Seacom Engineering College | Diploma in Mechanical Engineering (2019) - Kingston Polytechnic College

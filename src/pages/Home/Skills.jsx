@@ -22,17 +22,17 @@ const Skills = () => {
       ]
     },
     {
-      category: 'Backend & Java Stack',
+      category: 'Backend & Frameworks',
       icon: 'bi-cpu-fill',
-      symbol: '☕',
+      symbol: '⚙️',
       variant: 'neon',
       skills: [
-        { name: 'Core Java', symbol: '☕' },
-        { name: 'JDBC', symbol: '🔌' },
-        { name: 'Servlet', symbol: '⚙️' },
-        { name: 'Hibernate', symbol: '🧬' },
-        { name: 'Spring Boot', symbol: '🌱' },
-        { name: 'Express.js', symbol: '🚀' }
+        { name: 'Laravel', symbol: '🔴' },
+        { name: 'CodeIgniter 3', symbol: '🔥' },
+        { name: 'Node.js', symbol: '🟢' },
+        { name: 'Express.js', symbol: '🚀' },
+        { name: 'Core PHP', symbol: '🐘' },
+        { name: 'REST APIs', symbol: '🔗' }
       ]
     },
     {

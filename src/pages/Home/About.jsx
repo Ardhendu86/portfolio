@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImg from '../../assets/images/profile/profile-square-3.webp';
+import profileImg from '../../assets/images/profile/ardhendu3.png';
 import { HoloIcon, HoloBadge } from '../../common/Hologram';
 
 /**
@@ -40,19 +40,19 @@ const About = () => {
               <div className="d-flex flex-column gap-3 small border-top border-secondary border-opacity-25 pt-3">
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-geo-alt-fill" size="sm" variant="cyan" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <strong>Location:</strong> From Hooghly, West Bengal (Staying in Kalyani)
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-briefcase-fill" size="sm" variant="neon" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <strong>Role:</strong> Software Developer @ Codeulas Innovation
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-3">
                   <HoloIcon icon="bi-award-fill" size="sm" variant="emerald" showCorners={true} />
-                  <div>
+                  <div className="theme-contrast-text">
                     <strong>Education:</strong> B.Tech (2022) | Diploma (2019)
                   </div>
                 </div>
@@ -89,7 +89,7 @@ const About = () => {
                   </div>
                   <h5 className="fw-bold fs-6 mb-2">Backend &amp; Database</h5>
                   <p className="small mb-0 opacity-75">
-                    Developing robust backend APIs with Core Java, Spring Boot, MySQL, and PostgreSQL.
+                    Developing robust backend APIs and services with Laravel, CodeIgniter 3, Node.js, Express, MySQL, and PostgreSQL.
                   </p>
                 </div>
               </div>

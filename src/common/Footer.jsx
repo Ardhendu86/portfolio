@@ -32,7 +32,7 @@ const Footer = () => {
               </Link>
             </div>
             <p className="small mb-3 opacity-75">
-              Full Stack Software Developer specializing in Java, Spring Boot, React.js, and modern web application development.
+              Full Stack Software Developer specializing in Laravel, CodeIgniter 3, Node.js, Express, React.js, and modern web application development.
             </p>
             <p className="small mb-0 opacity-75 d-flex align-items-center gap-1">
               <i className="bi bi-geo-alt-fill text-info"></i> Based in Kalyani / Hooghly, West Bengal
@@ -53,11 +53,11 @@ const Footer = () => {
                   <i className="bi bi-chevron-right text-info"></i> About &amp; Qualifications
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/projects" className="text-decoration-none hover-info opacity-75 d-inline-flex align-items-center gap-1">
                   <i className="bi bi-chevron-right text-info"></i> Projects Showcase
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/contact" className="text-decoration-none hover-info opacity-75 d-inline-flex align-items-center gap-1">
                   <i className="bi bi-chevron-right text-info"></i> Contact Me
@@ -91,7 +91,7 @@ const Footer = () => {
         <div className="row text-center small opacity-75">
           <div className="col-12">
             <p className="mb-0">
-              &copy; {currentYear} Ardhendu Bag. Built with React.js &amp; Bootstrap. All rights reserved.
+              &copy; {currentYear} <span className="text-info fw-semibold">Ardhendu Bag</span>. All rights reserved.
             </p>
           </div>
         </div>
