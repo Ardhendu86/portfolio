@@ -1,0 +1,182 @@
+/* Home Page Styles */
+.home-page {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hover-info {
+  transition: color 0.3s ease;
+}
+
+.hover-info:hover {
+  color: var(--accent-color) !important;
+}
+
+/*--------------------------------------------------------------
+# Experience Section (Workfolio Design System - Aesthetic & Theme-Aware)
+--------------------------------------------------------------*/
+.experience.section {
+  padding: 60px 0;
+  background-color: var(--background-color);
+  transition: background-color 0.4s ease;
+}
+
+.experience .col-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.experience .col-head i {
+  font-size: 20px;
+  color: var(--accent-color);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--badge-bg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.experience .col-head h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--heading-color);
+}
+
+.experience .timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.experience .timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.experience .item {
+  position: relative;
+  padding-bottom: 32px;
+}
+
+.experience .item:last-child {
+  padding-bottom: 0;
+}
+
+.experience .item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 0 4px var(--badge-bg);
+}
+
+.experience .item .year {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-color);
+  background: var(--badge-bg);
+  padding: 3px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  margin-bottom: 8px;
+}
+
+.experience .item h4 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--heading-color);
+}
+
+.experience .item .org {
+  display: block;
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.experience .item p {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  color: var(--default-color);
+}
+
+.experience .btn-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 30px;
+  border-radius: 30px;
+  background: var(--accent-gradient);
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 16px;
+  border: none;
+  box-shadow: var(--shadow-glow);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  min-height: 48px;
+}
+
+.experience .btn-main:hover {
+  background: var(--accent-gradient-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(56, 189, 248, 0.4);
+  color: #ffffff !important;
+}
+
+/* Responsive Overrides for Small Mobile Devices */
+@media (max-width: 575.98px) {
+  .experience.section {
+    padding: 40px 0;
+  }
+
+  .experience .timeline {
+    padding-left: 20px;
+  }
+
+  .experience .item::before {
+    left: -20px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .experience .item h4 {
+    font-size: 16px;
+  }
+
+  .experience .btn-main {
+    width: 100%;
+    font-size: 15px;
+  }
+}
