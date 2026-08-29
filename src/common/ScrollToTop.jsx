@@ -1,18 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { logPageVisit } from '../utils/visitorTracker';
 
 /**
  * ScrollToTop Component
  * 1. Resets window scroll position to (0,0) when switching routes.
- * 2. Displays a floating "scroll to top" button when user scrolls down.
+ * 2. Logs page visit analytics.
+ * 3. Displays a floating "scroll to top" button when user scrolls down.
  */
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Reset window scroll on route change
+  // Reset window scroll on route change & log visit
   useEffect(() => {
     window.scrollTo(0, 0);
+    if (!pathname.startsWith('/admin') && !pathname.startsWith('/dashboard') && !pathname.startsWith('/visitors') && !pathname.startsWith('/checklist')) {
+      logPageVisit(pathname);
+    }
   }, [pathname]);
 
   // Monitor scroll position for button visibility

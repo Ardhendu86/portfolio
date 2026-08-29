@@ -13,6 +13,7 @@ import Home from './pages/Home/Home';
 import AboutPage from './pages/About/AboutPage';
 import ProjectsPage from './pages/Projects/ProjectsPage';
 import ContactPage from './pages/Contact/ContactPage';
+import HiddenDashboard from './pages/HiddenDashboard/HiddenDashboard';
 import NotFound from './pages/NotFound/NotFound';
 
 // Global Stylesheet
@@ -44,6 +45,13 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+
+            {/* Hidden Private Admin / Visitor Checklist Routes */}
+            <Route path="/admin" element={<HiddenDashboard />} />
+            <Route path="/visitors" element={<HiddenDashboard />} />
+            <Route path="/dashboard" element={<HiddenDashboard />} />
+            <Route path="/checklist" element={<HiddenDashboard />} />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

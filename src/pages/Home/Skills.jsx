@@ -45,7 +45,7 @@ const Skills = () => {
         { name: 'MySQL', symbol: '🐬' },
         { name: 'PostgreSQL', symbol: '🐘' },
         { name: 'RESTful APIs', symbol: '🔗' },
-        { name: 'Git & GitHub', symbol: '🌿' }
+        { name: 'Git & Version Control', symbol: '🌿' }
       ]
     }
   ];

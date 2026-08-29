@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { HoloIcon, HoloBadge } from '../../common/Hologram';
+import { logContactSubmission } from '../../utils/visitorTracker';
 
 /**
  * Contact Component
@@ -25,6 +26,8 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
+      // Save contact inquiry to hidden checklist
+      logContactSubmission(formData);
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitted(false), 5000);
@@ -53,8 +56,8 @@ const Contact = () => {
                   <HoloIcon icon="bi-envelope-fill" size="md" variant="cyan" showCorners={true} />
                   <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">Email</h5>
-                    <a href="mailto:ardhendu.bag@example.com" className="text-info text-decoration-none small">
-                      ardhendu.bag@example.com
+                    <a href="mailto:ardhendubag01@gmail.com" className="text-info text-decoration-none small">
+                      ardhendubag01@gmail.com
                     </a>
                   </div>
                 </div>
@@ -67,7 +70,7 @@ const Contact = () => {
                   <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">Phone</h5>
                     <a href="tel:+919876543210" className="text-info text-decoration-none small">
-                      +91 98765 43210
+                      +91 8640805196
                     </a>
                   </div>
                 </div>
@@ -80,12 +83,12 @@ const Contact = () => {
                   <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">LinkedIn</h5>
                     <a
-                      href="https://linkedin.com/in/ardhendubag"
+                      href="https://www.linkedin.com/in/ardhendu-bag-28936a152"
                       target="_blank"
                       rel="noreferrer"
                       className="text-info text-decoration-none small"
                     >
-                      linkedin.com/in/ardhendubag
+                      linkedin.com/in/ardhendu-bag-28936a152
                     </a>
                   </div>
                 </div>
@@ -97,14 +100,9 @@ const Contact = () => {
                   <HoloIcon icon="bi-github" size="md" variant="emerald" showCorners={true} />
                   <div className="theme-contrast-text">
                     <h5 className="fw-bold fs-6 mb-1">GitHub</h5>
-                    <a
-                      href="https://github.com/ardhendubag"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-info text-decoration-none small"
-                    >
-                      github.com/ardhendubag
-                    </a>
+                    <span className="text-muted small">
+                      Ardhendu Bag
+                    </span>
                   </div>
                 </div>
               </div>
@@ -146,7 +144,7 @@ const Contact = () => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Ardhendu Bag"
+                      placeholder=""
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
@@ -158,7 +156,7 @@ const Contact = () => {
                     <input
                       type="email"
                       className="form-control"
-                      placeholder="name@example.com"
+                      placeholder=""
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
@@ -170,7 +168,7 @@ const Contact = () => {
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="Project Discussion / Inquiry"
+                      placeholder=""
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}

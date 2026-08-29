@@ -75,13 +75,13 @@ const Hero = () => {
             {/* Social Links with Hologram Icon Glow */}
             <div className="d-flex align-items-center gap-3 pt-2">
               <span className="small fw-semibold opacity-75">Connect:</span>
-              <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <span title="GitHub" style={{ cursor: 'default' }}>
                 <HoloIcon icon="bi-github" size="sm" variant="cyan" showCorners={true} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              </span>
+              <a href="https://www.linkedin.com/in/ardhendu-bag-28936a152" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <HoloIcon icon="bi-linkedin" size="sm" variant="blue" showCorners={true} />
               </a>
-              <a href="mailto:ardhendubag@example.com" aria-label="Email">
+              <a href="mailto:ardhendubag01@gmail.com" aria-label="Email">
                 <HoloIcon icon="bi-envelope" size="sm" variant="neon" showCorners={true} />
               </a>
             </div>

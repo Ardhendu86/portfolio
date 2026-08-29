@@ -70,18 +70,20 @@ const Footer = () => {
           <div className="col-lg-4 col-md-12 text-lg-end">
             <h5 className="fw-semibold text-info mb-3">Connect With Me</h5>
             <div className="d-flex gap-3 justify-content-lg-end mb-3">
-              <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <span title="GitHub" style={{ cursor: 'default' }}>
                 <HoloIcon icon="bi-github" size="sm" variant="cyan" showCorners={true} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              </span>
+              <a href="https://www.linkedin.com/in/ardhendu-bag-28936a152" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <HoloIcon icon="bi-linkedin" size="sm" variant="blue" showCorners={true} />
               </a>
-              <a href="mailto:ardhendubag@example.com" aria-label="Email">
+              <a href="mailto:ardhendubag01@gmail.com" aria-label="Email">
                 <HoloIcon icon="bi-envelope" size="sm" variant="neon" showCorners={true} />
               </a>
             </div>
             <span className="badge bg-info bg-opacity-10 text-info px-3 py-2 border border-info border-opacity-25">
-              Available for Opportunities
+             <Link to="/admin" className="text-decoration-none hover-info">
+                Available for Opportunities
+              </Link>
             </span>
           </div>
         </div>

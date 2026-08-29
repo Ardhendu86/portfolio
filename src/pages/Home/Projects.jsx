@@ -19,8 +19,7 @@ const Projects = () => {
       variant: 'cyan',
       description: 'Comprehensive business management system featuring REST API endpoints, JWT authentication, PostgreSQL database integration, and responsive React frontend.',
       tags: ['React.js', 'Spring Boot', 'PostgreSQL', 'Bootstrap'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: '#'
     },
     {
       id: 2,
@@ -31,8 +30,7 @@ const Projects = () => {
       variant: 'neon',
       description: 'Dynamic online store platform with product filtering, shopping cart state management using Redux Toolkit, and payment gateway UI integrations.',
       tags: ['React.js', 'Redux Toolkit', 'Bootstrap 5', 'REST APIs'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: '#'
     },
     {
       id: 3,
@@ -43,8 +41,7 @@ const Projects = () => {
       variant: 'emerald',
       description: 'Clean single-page React portfolio featuring component routing, responsive layout, hologram icons & symbols, theme toggle, and interactive forms.',
       tags: ['React.js', 'Hologram UI', 'HTML5/CSS3', 'JavaScript'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: '#'
     }
   ];
 
@@ -94,12 +91,9 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  <div className="d-flex gap-2 pt-2 border-top border-secondary border-opacity-25">
-                    <a href={project.demoUrl} className="btn btn-sm btn-info text-white flex-grow-1 d-inline-flex align-items-center justify-content-center gap-1">
-                      <i className="bi bi-box-arrow-up-right"></i> Live Demo
-                    </a>
-                    <a href={project.githubUrl} className="btn btn-sm btn-outline-info d-inline-flex align-items-center gap-1">
-                      <i className="bi bi-github"></i> Code
+                  <div className="pt-2 border-top border-secondary border-opacity-25">
+                    <a href={project.demoUrl} className="btn btn-sm btn-info text-white w-100 d-inline-flex align-items-center justify-content-center gap-1">
+                      <i className="bi bi-box-arrow-up-right"></i> View Live Project
                     </a>
                   </div>
                 </div>
