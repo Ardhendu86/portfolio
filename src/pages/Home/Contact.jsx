@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { HoloIcon, HoloBadge } from '../../common/Hologram';
 
 /**
  * Contact Component
- * Form & contact info cards with theme compatibility.
+ * Form & contact info cards with 3D Hologram Icons and futuristic styling.
  */
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -31,13 +32,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-5">
-      <div className="container py-4">
+    <section id="contact" className="py-5 position-relative">
+      <div className="container py-4 position-relative" style={{ zIndex: 1 }}>
         {/* Section Header */}
         <div className="text-center mb-5" data-aos="fade-up">
-          <span className="badge bg-info bg-opacity-10 text-info px-3 py-2 rounded-pill border border-info border-opacity-25 mb-2">
-            Get In Touch
-          </span>
+          <div className="mb-2">
+            <HoloBadge icon="bi-broadcast-pin" text="Get In Touch" variant="cyan" />
+          </div>
           <h2 className="display-6 fw-bold">Contact Me</h2>
           <div className="mx-auto bg-info" style={{ width: '60px', height: '3px', borderRadius: '2px' }}></div>
         </div>
@@ -47,11 +48,9 @@ const Contact = () => {
           <div className="col-lg-5" data-aos="fade-right" data-aos-delay="100">
             <div className="d-flex flex-column gap-3">
               {/* Email */}
-              <div className="card theme-card rounded-4 p-3 shadow-sm">
+              <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
-                  <div className="bg-info bg-opacity-25 text-info rounded-3 p-3 fs-4">
-                    <i className="bi bi-envelope-fill"></i>
-                  </div>
+                  <HoloIcon icon="bi-envelope-fill" size="md" variant="cyan" showCorners={true} />
                   <div>
                     <h5 className="fw-bold fs-6 mb-1">Email</h5>
                     <a href="mailto:ardhendu.bag@example.com" className="text-info text-decoration-none small">
@@ -62,11 +61,9 @@ const Contact = () => {
               </div>
 
               {/* Phone */}
-              <div className="card theme-card rounded-4 p-3 shadow-sm">
+              <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
-                  <div className="bg-info bg-opacity-25 text-info rounded-3 p-3 fs-4">
-                    <i className="bi bi-telephone-fill"></i>
-                  </div>
+                  <HoloIcon icon="bi-telephone-fill" size="md" variant="neon" showCorners={true} />
                   <div>
                     <h5 className="fw-bold fs-6 mb-1">Phone</h5>
                     <a href="tel:+919876543210" className="text-info text-decoration-none small">
@@ -77,11 +74,9 @@ const Contact = () => {
               </div>
 
               {/* LinkedIn */}
-              <div className="card theme-card rounded-4 p-3 shadow-sm">
+              <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
-                  <div className="bg-info bg-opacity-25 text-info rounded-3 p-3 fs-4">
-                    <i className="bi bi-linkedin"></i>
-                  </div>
+                  <HoloIcon icon="bi-linkedin" size="md" variant="blue" showCorners={true} />
                   <div>
                     <h5 className="fw-bold fs-6 mb-1">LinkedIn</h5>
                     <a
@@ -97,11 +92,9 @@ const Contact = () => {
               </div>
 
               {/* GitHub */}
-              <div className="card theme-card rounded-4 p-3 shadow-sm">
+              <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
-                  <div className="bg-info bg-opacity-25 text-info rounded-3 p-3 fs-4">
-                    <i className="bi bi-github"></i>
-                  </div>
+                  <HoloIcon icon="bi-github" size="md" variant="emerald" showCorners={true} />
                   <div>
                     <h5 className="fw-bold fs-6 mb-1">GitHub</h5>
                     <a
@@ -117,11 +110,9 @@ const Contact = () => {
               </div>
 
               {/* Location */}
-              <div className="card theme-card rounded-4 p-3 shadow-sm">
+              <div className="card theme-card holo-card rounded-4 p-3 shadow-sm">
                 <div className="d-flex align-items-center gap-3">
-                  <div className="bg-info bg-opacity-25 text-info rounded-3 p-3 fs-4">
-                    <i className="bi bi-geo-alt-fill"></i>
-                  </div>
+                  <HoloIcon icon="bi-geo-alt-fill" size="md" variant="amber" showCorners={true} />
                   <div>
                     <h5 className="fw-bold fs-6 mb-1">Location</h5>
                     <p className="small mb-0 opacity-75">
@@ -135,7 +126,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="col-lg-7" data-aos="fade-left" data-aos-delay="200">
-            <div className="card theme-card rounded-4 p-4 shadow-sm">
+            <div className="card theme-card holo-card rounded-4 p-4 shadow-sm">
               <h3 className="fw-bold fs-4 mb-3">Send a Message</h3>
               <p className="small mb-4 opacity-75">
                 Have a question or want to discuss a software project? Feel free to reach out using the form below.
@@ -199,8 +190,8 @@ const Contact = () => {
                     ></textarea>
                   </div>
                   <div className="col-12 mt-4">
-                    <button type="submit" className="btn btn-info text-white fw-bold px-4 py-2 rounded-3 shadow w-100">
-                      <i className="bi bi-send-fill me-2"></i> Send Message
+                    <button type="submit" className="btn btn-info text-white fw-bold px-4 py-2 rounded-3 shadow w-100 d-inline-flex align-items-center justify-content-center gap-2">
+                      <i className="bi bi-send-fill"></i> Send Message
                     </button>
                   </div>
                 </div>

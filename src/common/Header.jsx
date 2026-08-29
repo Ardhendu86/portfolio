@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import logoImg from '../assets/images/logo.png';
 
 /**
  * Header Component
- * Features responsive navbar with animated mobile toggle (bi-list / bi-x-lg)
- * and a single dark/light mode theme toggle button with persistent state.
+ * Features responsive navbar with brand logo, animated mobile toggle (bi-list / bi-x-lg),
+ * Holographic logo branding glow, and theme toggle button.
  */
 const Header = () => {
   // State for mobile navigation menu toggle
@@ -37,12 +38,22 @@ const Header = () => {
   };
 
   return (
-    <header className="navbar navbar-expand-lg custom-navbar fixed-top shadow-sm py-3">
+    <header className="navbar navbar-expand-lg custom-navbar fixed-top shadow-sm py-2">
       <div className="container">
         {/* Brand / Logo */}
-        <Link className="navbar-brand d-flex align-items-center fw-bold fs-4" to="/" onClick={closeNav}>
-          <i className="bi bi-code-slash text-info me-2 fs-3"></i>
-          <span>Ardhendu<span className="text-info">.Bag</span></span>
+        <Link className="navbar-brand d-flex align-items-center" to="/" onClick={closeNav} aria-label="Ardhendu Bag Portfolio Home">
+          <img
+            src={logoImg}
+            alt="Ardhendu Bag Logo"
+            className="rounded-3 shadow-sm"
+            style={{
+              height: '42px',
+              width: 'auto',
+              maxHeight: '42px',
+              objectFit: 'contain',
+              filter: 'drop-shadow(0 0 8px rgba(0, 240, 255, 0.4))'
+            }}
+          />
         </Link>
 
         {/* Right Controls Container: Theme Toggle & Mobile Hamburger / Close Button */}
@@ -139,15 +150,15 @@ const Header = () => {
             </button>
 
             {/* Get In Touch CTA */}
-            <Link to="/contact" className="btn btn-outline-info rounded-pill px-4 btn-sm" onClick={closeNav}>
-              <i className="bi bi-send me-1"></i> Get In Touch
+            <Link to="/contact" className="btn btn-outline-info rounded-pill px-4 btn-sm d-inline-flex align-items-center gap-1" onClick={closeNav}>
+              <i className="bi bi-send"></i> Get In Touch
             </Link>
           </div>
 
           {/* Mobile View CTA Button */}
           <div className="d-lg-none mt-3 border-top border-secondary border-opacity-25 pt-3">
-            <Link to="/contact" className="btn btn-info text-white w-100 rounded-pill py-2" onClick={closeNav}>
-              <i className="bi bi-send me-1"></i> Get In Touch
+            <Link to="/contact" className="btn btn-info text-white w-100 rounded-pill py-2 d-inline-flex align-items-center justify-content-center gap-1" onClick={closeNav}>
+              <i className="bi bi-send"></i> Get In Touch
             </Link>
           </div>
         </div>

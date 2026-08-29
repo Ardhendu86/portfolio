@@ -1,0 +1,485 @@
+/* ==============================================================
+# Hologram Icons, Symbols & Futuristic HUD System
+# Designed for Ardhendu Bag Portfolio
+============================================================== */
+
+:root {
+  --holo-cyan: #00f0ff;
+  --holo-cyan-glow: rgba(0, 240, 255, 0.65);
+  --holo-cyan-subtle: rgba(0, 240, 255, 0.15);
+  --holo-cyan-bg: rgba(0, 240, 255, 0.08);
+
+  --holo-neon: #a855f7;
+  --holo-neon-glow: rgba(168, 85, 247, 0.65);
+  --holo-neon-subtle: rgba(168, 85, 247, 0.15);
+
+  --holo-blue: #38bdf8;
+  --holo-blue-glow: rgba(56, 189, 248, 0.65);
+  --holo-blue-subtle: rgba(56, 189, 248, 0.15);
+
+  --holo-emerald: #10b981;
+  --holo-emerald-glow: rgba(16, 185, 129, 0.65);
+
+  --holo-amber: #f59e0b;
+  --holo-amber-glow: rgba(245, 158, 11, 0.65);
+
+  --holo-scanline-speed: 2.8s;
+  --holo-pulse-speed: 3s;
+}
+
+/* --------------------------------------------------------------
+# Core Hologram Icon Container
+-------------------------------------------------------------- */
+.holo-icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 600px;
+  user-select: none;
+}
+
+/* Size Variants */
+.holo-icon-sm {
+  width: 36px;
+  height: 36px;
+  font-size: 1.1rem;
+}
+.holo-icon-md {
+  width: 48px;
+  height: 48px;
+  font-size: 1.4rem;
+}
+.holo-icon-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 2rem;
+}
+.holo-icon-xl {
+  width: 80px;
+  height: 80px;
+  font-size: 2.6rem;
+}
+.holo-icon-hero {
+  width: 100px;
+  height: 100px;
+  font-size: 3.2rem;
+}
+
+/* Holographic Icon Body */
+.holo-icon-body {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 14px;
+  background: var(--holo-cyan-bg);
+  border: 1px solid var(--holo-cyan-glow);
+  color: var(--holo-cyan);
+  box-shadow: 0 0 15px var(--holo-cyan-subtle), inset 0 0 12px var(--holo-cyan-subtle);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Color Variant Themes */
+.holo-cyan .holo-icon-body {
+  border-color: var(--holo-cyan);
+  color: var(--holo-cyan);
+  background: var(--holo-cyan-bg);
+  box-shadow: 0 0 18px var(--holo-cyan-glow), inset 0 0 10px var(--holo-cyan-subtle);
+}
+.holo-neon .holo-icon-body {
+  border-color: var(--holo-neon);
+  color: var(--holo-neon);
+  background: var(--holo-neon-subtle);
+  box-shadow: 0 0 18px var(--holo-neon-glow), inset 0 0 10px var(--holo-neon-subtle);
+}
+.holo-blue .holo-icon-body {
+  border-color: var(--holo-blue);
+  color: var(--holo-blue);
+  background: var(--holo-blue-subtle);
+  box-shadow: 0 0 18px var(--holo-blue-glow), inset 0 0 10px var(--holo-blue-subtle);
+}
+.holo-emerald .holo-icon-body {
+  border-color: var(--holo-emerald);
+  color: var(--holo-emerald);
+  background: rgba(16, 185, 129, 0.1);
+  box-shadow: 0 0 18px var(--holo-emerald-glow), inset 0 0 10px rgba(16, 185, 129, 0.2);
+}
+.holo-amber .holo-icon-body {
+  border-color: var(--holo-amber);
+  color: var(--holo-amber);
+  background: rgba(245, 158, 11, 0.1);
+  box-shadow: 0 0 18px var(--holo-amber-glow), inset 0 0 10px rgba(245, 158, 11, 0.2);
+}
+
+/* Hologram Hover Reactivity */
+.holo-icon-wrapper:hover .holo-icon-body {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 0 28px var(--holo-cyan-glow), 0 0 45px var(--holo-cyan-subtle), inset 0 0 16px var(--holo-cyan-glow);
+  text-shadow: 0 0 12px currentColor, 0 0 22px currentColor;
+}
+.holo-neon:hover .holo-icon-body {
+  box-shadow: 0 0 28px var(--holo-neon-glow), 0 0 45px var(--holo-neon-subtle), inset 0 0 16px var(--holo-neon-glow);
+}
+
+/* Holographic Scanline Overlay */
+.holo-scanline {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 100%
+  );
+  opacity: 0.7;
+  pointer-events: none;
+  animation: holoScan var(--holo-scanline-speed) linear infinite;
+}
+
+@keyframes holoScan {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 200%;
+  }
+}
+
+/* Holographic Flickering & Glitch Effect */
+.holo-glimmer {
+  animation: holoFlicker 6s infinite ease-in-out;
+}
+
+@keyframes holoFlicker {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 6px currentColor); }
+  3% { opacity: 0.85; filter: drop-shadow(0 0 2px currentColor); }
+  6% { opacity: 1; filter: drop-shadow(0 0 10px currentColor); }
+  52% { opacity: 0.92; }
+  54% { opacity: 1; filter: drop-shadow(0 0 14px currentColor); }
+  88% { opacity: 0.88; }
+  90% { opacity: 1; }
+}
+
+/* --------------------------------------------------------------
+# Hologram 3D Emitter Base (Pedestal)
+-------------------------------------------------------------- */
+.holo-emitter-base {
+  position: absolute;
+  bottom: -10px;
+  width: 120%;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid var(--holo-cyan);
+  background: radial-gradient(ellipse at center, var(--holo-cyan-glow) 0%, transparent 70%);
+  transform: perspective(300px) rotateX(70deg);
+  box-shadow: 0 0 14px var(--holo-cyan-glow);
+  opacity: 0.85;
+  animation: emitterPulse 2.5s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes emitterPulse {
+  0% {
+    transform: perspective(300px) rotateX(70deg) scale(0.9);
+    opacity: 0.6;
+    box-shadow: 0 0 8px var(--holo-cyan-glow);
+  }
+  100% {
+    transform: perspective(300px) rotateX(70deg) scale(1.15);
+    opacity: 1;
+    box-shadow: 0 0 22px var(--holo-cyan-glow);
+  }
+}
+
+/* Hologram Light Cone / Projection Beam */
+.holo-projection-beam {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 140%;
+  background: linear-gradient(to top, var(--holo-cyan-subtle) 0%, transparent 100%);
+  clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+  opacity: 0.4;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------
+# Hologram Orbital Rings & HUD Targeting
+-------------------------------------------------------------- */
+.holo-orbital-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px dashed var(--holo-cyan);
+  opacity: 0.5;
+  pointer-events: none;
+  animation: rotateRing 12s linear infinite;
+}
+
+.holo-orbital-ring-reverse {
+  position: absolute;
+  inset: -12px;
+  border-radius: 50%;
+  border: 1px dotted var(--holo-neon);
+  opacity: 0.4;
+  pointer-events: none;
+  animation: rotateRingReverse 16s linear infinite;
+}
+
+@keyframes rotateRing {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes rotateRingReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* HUD Tech Corner Brackets */
+.holo-hud-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--holo-cyan);
+  border-style: solid;
+  pointer-events: none;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+.holo-hud-tl { top: -3px; left: -3px; border-width: 2px 0 0 2px; }
+.holo-hud-tr { top: -3px; right: -3px; border-width: 2px 2px 0 0; }
+.holo-hud-bl { bottom: -3px; left: -3px; border-width: 0 0 2px 2px; }
+.holo-hud-br { bottom: -3px; right: -3px; border-width: 0 2px 2px 0; }
+
+.holo-icon-wrapper:hover .holo-hud-tl { transform: translate(-2px, -2px); opacity: 1; }
+.holo-icon-wrapper:hover .holo-hud-tr { transform: translate(2px, -2px); opacity: 1; }
+.holo-icon-wrapper:hover .holo-hud-bl { transform: translate(-2px, 2px); opacity: 1; }
+.holo-icon-wrapper:hover .holo-hud-br { transform: translate(2px, 2px); opacity: 1; }
+
+/* --------------------------------------------------------------
+# Hologram Floating Symbols & Glyphs
+-------------------------------------------------------------- */
+.holo-symbol-float {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  font-family: 'Courier New', monospace, sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--holo-cyan);
+  background: rgba(17, 24, 39, 0.7);
+  border: 1px solid var(--holo-cyan);
+  border-radius: 30px;
+  box-shadow: 0 0 16px var(--holo-cyan-subtle), inset 0 0 10px var(--holo-cyan-subtle);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: floatHolo 4s ease-in-out infinite;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.holo-symbol-float.neon {
+  color: var(--holo-neon);
+  border-color: var(--holo-neon);
+  box-shadow: 0 0 16px var(--holo-neon-subtle), inset 0 0 10px var(--holo-neon-subtle);
+}
+
+.holo-symbol-float.emerald {
+  color: var(--holo-emerald);
+  border-color: var(--holo-emerald);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.3), inset 0 0 10px rgba(16, 185, 129, 0.2);
+}
+
+@keyframes floatHolo {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+/* --------------------------------------------------------------
+# Hologram Projector Frame (For Hero Visual & Profiles)
+-------------------------------------------------------------- */
+.holo-projector-container {
+  position: relative;
+  display: inline-block;
+  perspective: 800px;
+}
+
+.holo-projector-frame {
+  position: relative;
+  border-radius: 24px;
+  padding: 8px;
+  background: linear-gradient(135deg, rgba(0, 240, 255, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
+  border: 1px solid var(--holo-cyan);
+  box-shadow: 0 0 30px var(--holo-cyan-subtle), inset 0 0 20px var(--holo-cyan-subtle);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  overflow: hidden;
+  z-index: 2;
+}
+
+.holo-projector-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 3px,
+    rgba(0, 240, 255, 0.04) 3px,
+    rgba(0, 240, 255, 0.04) 6px
+  );
+  pointer-events: none;
+  z-index: 3;
+}
+
+.holo-projector-frame::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.4), transparent);
+  animation: projectorScan 3.5s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 4;
+}
+
+@keyframes projectorScan {
+  0% { top: -100px; opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { top: 120%; opacity: 0; }
+}
+
+.holo-projector-pedestal {
+  position: absolute;
+  bottom: -22px;
+  left: 10%;
+  width: 80%;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid var(--holo-cyan);
+  background: radial-gradient(ellipse at center, var(--holo-cyan) 0%, rgba(0, 240, 255, 0.1) 70%, transparent 100%);
+  transform: rotateX(75deg);
+  box-shadow: 0 0 35px var(--holo-cyan-glow);
+  animation: pedestalGlow 2.5s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes pedestalGlow {
+  0% {
+    box-shadow: 0 0 20px var(--holo-cyan-glow), inset 0 0 10px var(--holo-cyan);
+    opacity: 0.7;
+  }
+  100% {
+    box-shadow: 0 0 45px var(--holo-cyan-glow), inset 0 0 20px var(--holo-cyan);
+    opacity: 1;
+  }
+}
+
+/* Floating HUD Tag Orbit */
+.holo-orbit-tag {
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 0 15px var(--holo-cyan-subtle);
+  transition: all 0.3s ease;
+}
+
+.holo-orbit-tag:hover {
+  transform: scale(1.12) !important;
+  box-shadow: 0 0 25px var(--holo-cyan-glow);
+}
+
+/* --------------------------------------------------------------
+# Hologram Badge System
+-------------------------------------------------------------- */
+.holo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 20px;
+  border: 1px solid var(--holo-cyan);
+  background: var(--holo-cyan-bg);
+  color: var(--holo-cyan);
+  box-shadow: 0 0 12px var(--holo-cyan-subtle);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.holo-badge:hover {
+  box-shadow: 0 0 20px var(--holo-cyan-glow);
+  transform: translateY(-2px);
+}
+
+.holo-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--holo-cyan);
+  box-shadow: 0 0 8px var(--holo-cyan);
+  animation: badgeDotPulse 1.8s infinite;
+}
+
+@keyframes badgeDotPulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.8; }
+  50% { transform: scale(1.4); opacity: 1; box-shadow: 0 0 12px var(--holo-cyan); }
+}
+
+/* --------------------------------------------------------------
+# Holographic Ambient Tech Grid & Floating Glyphs
+-------------------------------------------------------------- */
+.holo-ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 80%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, black 40%, transparent 80%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hologram Card Accent */
+.holo-card {
+  position: relative;
+  background: var(--card-bg) !important;
+  border: 1px solid rgba(0, 240, 255, 0.2) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), 0 0 15px rgba(0, 240, 255, 0.05);
+  transition: all 0.35s ease;
+}
+
+.holo-card:hover {
+  border-color: var(--holo-cyan) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35), 0 0 25px var(--holo-cyan-subtle) !important;
+  transform: translateY(-5px);
+}

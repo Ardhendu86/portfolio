@@ -1,40 +1,50 @@
 import React from 'react';
+import { HoloIcon, HoloBadge } from '../../common/Hologram';
 
 /**
  * Experience Component
- * Developed based on the Workfolio Bootstrap template design.
+ * Features futuristic Hologram timeline nodes, glowing orbital badges, and career milestones.
  */
 const Experience = () => {
   return (
-    <section id="experience" className="experience section">
+    <section id="experience" className="experience section py-5 border-bottom border-secondary border-opacity-10 position-relative">
       {/* Section Title */}
-      <div className="container section-title" data-aos="fade-up">
-        <h2>Experience</h2>
-        <p>The roles and milestones that shaped how I work today</p>
+      <div className="container text-center mb-5" data-aos="fade-up">
+        <div className="mb-2">
+          <HoloBadge icon="bi-clock-history" text="Career & Education" variant="neon" />
+        </div>
+        <h2 className="display-6 fw-bold">Experience</h2>
+        <div className="mx-auto bg-info mb-3" style={{ width: '60px', height: '3px', borderRadius: '2px' }}></div>
+        <p className="opacity-75">The roles and milestones that shaped how I work today</p>
       </div>
 
       <div className="container">
         <div className="row g-5">
           {/* Work Column */}
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div className="col-head">
-              <i className="bi bi-briefcase"></i>
-              <h3>Work</h3>
+            <div className="d-flex align-items-center gap-3 mb-4">
+              <HoloIcon icon="bi-briefcase" size="md" variant="cyan" showCorners={true} showRings={true} />
+              <h3 className="fw-bold fs-4 mb-0">Work Experience</h3>
             </div>
             <div className="timeline">
-              <div className="item">
-                <span className="year">12 August 2024 — Present</span>
-                <h4>Software Developer</h4>
-                <span className="org">Codeulas Innovation Pvt. Ltd.</span>
-                <p>
+              <div className="item holo-card p-4 rounded-4 mb-4 border border-info border-opacity-25">
+                <span className="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 mb-2">
+                  12 August 2024 — Present
+                </span>
+                <h4 className="fw-bold fs-5 mb-1">Software Developer</h4>
+                <div className="text-info small fw-semibold mb-2">Codeulas Innovation Pvt. Ltd.</div>
+                <p className="small mb-0 opacity-75">
                   Working as a Full Stack Software Developer using Java, Spring Boot, React.js, MySQL, PostgreSQL, and REST APIs.
                 </p>
               </div>
-              <div className="item">
-                <span className="year">01 January 2023 — 05 August 2024</span>
-                <h4>Web Developer</h4>
-                <span className="org">Softech Company</span>
-                <p>
+
+              <div className="item holo-card p-4 rounded-4 border border-info border-opacity-25">
+                <span className="badge bg-secondary bg-opacity-25 text-info mb-2">
+                  01 January 2023 — 05 August 2024
+                </span>
+                <h4 className="fw-bold fs-5 mb-1">Web Developer</h4>
+                <div className="text-info small fw-semibold mb-2">Softech Company</div>
+                <p className="small mb-0 opacity-75">
                   Worked on responsive websites using HTML, CSS, JavaScript, Bootstrap, and React.js.
                 </p>
               </div>
@@ -43,24 +53,29 @@ const Experience = () => {
 
           {/* Education Column */}
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div className="col-head">
-              <i className="bi bi-mortarboard"></i>
-              <h3>Education &amp; Qualifications</h3>
+            <div className="d-flex align-items-center gap-3 mb-4">
+              <HoloIcon icon="bi-mortarboard" size="md" variant="neon" showCorners={true} showRings={true} />
+              <h3 className="fw-bold fs-4 mb-0">Education &amp; Qualifications</h3>
             </div>
             <div className="timeline">
-              <div className="item">
-                <span className="year">Completed in 2022</span>
-                <h4>B.Tech in Computer Science &amp; Engineering</h4>
-                <span className="org">Seacom Engineering College</span>
-                <p>
+              <div className="item holo-card p-4 rounded-4 mb-4 border border-info border-opacity-25">
+                <span className="badge bg-info bg-opacity-10 text-info border border-info border-opacity-25 mb-2">
+                  Completed in 2022
+                </span>
+                <h4 className="fw-bold fs-5 mb-1">B.Tech in Computer Science &amp; Engineering</h4>
+                <div className="text-info small fw-semibold mb-2">Seacom Engineering College</div>
+                <p className="small mb-0 opacity-75">
                   Completed B.Tech with focus on software engineering, object-oriented programming, data structures, and database systems.
                 </p>
               </div>
-              <div className="item">
-                <span className="year">Completed in 2019</span>
-                <h4>Diploma in Engineering</h4>
-                <span className="org">Kingston Polytechnic College</span>
-                <p>
+
+              <div className="item holo-card p-4 rounded-4 border border-info border-opacity-25">
+                <span className="badge bg-secondary bg-opacity-25 text-info mb-2">
+                  Completed in 2019
+                </span>
+                <h4 className="fw-bold fs-5 mb-1">Diploma in Engineering</h4>
+                <div className="text-info small fw-semibold mb-2">Kingston Polytechnic College</div>
+                <p className="small mb-0 opacity-75">
                   Learned web technology basics, core computer science concepts, and practical programming projects.
                 </p>
               </div>
@@ -70,7 +85,7 @@ const Experience = () => {
 
         {/* Download Resume Button */}
         <div className="text-center mt-5" data-aos="fade-up" data-aos-delay="200">
-          <a href="/assets/files/Ardhendu_Bag_Resume.txt" download className="btn-main">
+          <a href="/assets/files/Ardhendu_Bag_Resume.txt" download className="btn btn-info btn-lg px-4 py-2 text-white fw-semibold rounded-3 shadow d-inline-flex align-items-center gap-2">
             <i className="bi bi-download"></i> Download Full Resume
           </a>
         </div>

@@ -2,10 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Typed from 'typed.js';
 import profileImg from '../assets/images/profile/profile-2.webp';
+import { HoloIcon, HoloProjector, HoloBadge, HoloGridBackground } from './Hologram';
 
 /**
  * Hero Component
- * Displays main landing section introducing Ardhendu Bag with theme-aware styling.
+ * Displays main landing section introducing Ardhendu Bag with 3D Hologram projection and futuristic glowing symbols.
  */
 const Hero = () => {
   const typedTargetRef = useRef(null);
@@ -31,64 +32,78 @@ const Hero = () => {
 
   return (
     <section className="py-5 position-relative overflow-hidden border-bottom border-secondary border-opacity-10">
-      <div className="container py-4">
+      {/* Ambient Hologram Perspective Grid */}
+      <HoloGridBackground />
+
+      <div className="container py-4 position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center g-5">
           {/* Hero Left Content */}
           <div className="col-lg-7" data-aos="fade-right" data-aos-delay="100">
-            <div className="badge bg-info bg-opacity-10 text-info px-3 py-2 rounded-pill mb-3 border border-info border-opacity-25 fs-6 fw-normal">
-              <i className="bi bi-geo-alt-fill me-1"></i> From Hooghly | Staying in Kalyani, West Bengal
+            {/* Hologram Badge */}
+            <div className="mb-3">
+              <HoloBadge
+                icon="bi-geo-alt-fill"
+                text="From Hooghly | Staying in Kalyani, West Bengal"
+                variant="cyan"
+              />
             </div>
+
             <h1 className="display-4 fw-bold mb-3">
               Hi, I'm <span className="text-info">Ardhendu Bag</span>
             </h1>
             
-            {/* Dynamic Typed.js Subtitle */}
-            <p className="h3 opacity-75 mb-4 fw-normal">
-              I'm a <span ref={typedTargetRef} className="text-info fw-semibold"></span>
+            {/* Dynamic Typed.js Subtitle with Hologram Cyber Symbol */}
+            <p className="h3 opacity-75 mb-4 fw-normal d-flex align-items-center flex-wrap gap-2">
+              <span>I'm a</span>
+              <span ref={typedTargetRef} className="text-info fw-semibold"></span>
             </p>
 
             <p className="lead mb-4 opacity-75" style={{ maxWidth: '600px' }}>
               I enjoy building responsive, scalable, and user-friendly web applications. With expertise in React.js, Java, Spring Boot, and databases, I am continuously learning and refining modern web solutions.
             </p>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons with Holographic icons */}
             <div className="d-flex flex-wrap gap-3 mb-4">
-              <Link to="/projects" className="btn btn-info btn-lg px-4 py-2 text-white fw-semibold rounded-3 shadow">
-                <i className="bi bi-kanban me-2"></i> View My Work
+              <Link to="/projects" className="btn btn-info btn-lg px-4 py-2 text-white fw-semibold rounded-3 shadow d-inline-flex align-items-center gap-2">
+                <i className="bi bi-kanban"></i> View My Work
               </Link>
-              <Link to="/contact" className="btn btn-outline-info btn-lg px-4 py-2 fw-semibold rounded-3">
-                <i className="bi bi-chat-dots me-2"></i> Contact Me
+              <Link to="/contact" className="btn btn-outline-info btn-lg px-4 py-2 fw-semibold rounded-3 d-inline-flex align-items-center gap-2">
+                <i className="bi bi-chat-dots"></i> Contact Me
               </Link>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links with Hologram Icon Glow */}
             <div className="d-flex align-items-center gap-3 pt-2">
               <span className="small fw-semibold opacity-75">Connect:</span>
-              <a href="https://github.com" target="_blank" rel="noreferrer" className="fs-5 hover-info" aria-label="GitHub">
-                <i className="bi bi-github"></i>
+              <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub">
+                <HoloIcon icon="bi-github" size="sm" variant="cyan" showCorners={true} />
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="fs-5 hover-info" aria-label="LinkedIn">
-                <i className="bi bi-linkedin"></i>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+                <HoloIcon icon="bi-linkedin" size="sm" variant="blue" showCorners={true} />
               </a>
-              <a href="mailto:ardhendubag@example.com" className="fs-5 hover-info" aria-label="Email">
-                <i className="bi bi-envelope"></i>
+              <a href="mailto:ardhendubag@example.com" aria-label="Email">
+                <HoloIcon icon="bi-envelope" size="sm" variant="neon" showCorners={true} />
               </a>
             </div>
           </div>
 
-          {/* Hero Right Visual */}
+          {/* Hero Right Visual - 3D Holographic Projector */}
           <div className="col-lg-5 text-center" data-aos="fade-left" data-aos-delay="200">
-            <div className="position-relative d-inline-block">
-              {/* Smooth Animated Glowing Backdrop Blob */}
-              <div className="position-absolute hero-animated-glow"></div>
-
+            <HoloProjector
+              orbitSymbols={[
+                { symbol: '⚛', label: 'React.js', variant: 'cyan', style: { top: '-12px', left: '-20px' } },
+                { symbol: '☕', label: 'Java', variant: 'neon', style: { top: '30%', right: '-30px' } },
+                { symbol: '⚡', label: 'Spring Boot', variant: 'emerald', style: { bottom: '40px', left: '-25px' } },
+                { symbol: '🗄️', label: 'SQL DB', variant: 'cyan', style: { bottom: '-15px', right: '20px' } },
+              ]}
+            >
               <img
                 src={profileImg}
                 alt="Ardhendu Bag"
-                className="img-fluid rounded-4 shadow-lg position-relative border border-secondary border-opacity-25"
-                style={{ maxHeight: '420px', objectFit: 'cover', zIndex: 1 }}
+                className="img-fluid rounded-4 shadow-lg position-relative"
+                style={{ maxHeight: '400px', objectFit: 'cover' }}
               />
-            </div>
+            </HoloProjector>
           </div>
         </div>
       </div>
