@@ -38,7 +38,7 @@ const Hero = () => {
       <div className="container py-4 position-relative" style={{ zIndex: 1 }}>
         <div className="row align-items-center g-5">
           {/* Hero Left Content */}
-          <div className="col-lg-7" data-aos="fade-right" data-aos-delay="100">
+          <div className="col-lg-7 order-2 order-lg-1" data-aos="fade-right" data-aos-delay="100">
             {/* Hologram Badge */}
             <div className="mb-3">
               <HoloBadge
@@ -88,7 +88,7 @@ const Hero = () => {
           </div>
 
           {/* Hero Right Visual - 3D Holographic Projector */}
-          <div className="col-lg-5 text-center" data-aos="fade-left" data-aos-delay="200">
+          <div className="col-lg-5 text-center order-1 order-lg-2" data-aos="fade-left" data-aos-delay="200">
             <HoloProjector
               orbitSymbols={[
                 { symbol: '⚛', label: 'React.js', variant: 'cyan', style: { top: '-12px', left: '-20px' } },
