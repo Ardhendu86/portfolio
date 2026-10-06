@@ -81,9 +81,7 @@ const Footer = () => {
               </a>
             </div>
             <span className="badge bg-info bg-opacity-10 text-info px-3 py-2 border border-info border-opacity-25">
-             <Link to="/admin" className="text-decoration-none hover-info">
-                Available for Opportunities
-              </Link>
+              Available for Opportunities
             </span>
           </div>
         </div>

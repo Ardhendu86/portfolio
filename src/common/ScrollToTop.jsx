@@ -15,9 +15,7 @@ const ScrollToTop = () => {
   // Reset window scroll on route change & log visit
   useEffect(() => {
     window.scrollTo(0, 0);
-    if (!pathname.startsWith('/admin') && !pathname.startsWith('/dashboard') && !pathname.startsWith('/visitors') && !pathname.startsWith('/checklist')) {
-      logPageVisit(pathname);
-    }
+    logPageVisit(pathname);
   }, [pathname]);
 
   // Monitor scroll position for button visibility
