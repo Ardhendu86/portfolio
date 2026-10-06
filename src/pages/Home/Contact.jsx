@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { HoloIcon, HoloBadge } from '../../common/Hologram';
-import { logContactSubmission } from '../../utils/visitorTracker';
 
 /**
  * Contact Component
@@ -26,8 +25,6 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formData.name && formData.email && formData.message) {
-      // Save contact inquiry to hidden checklist
-      logContactSubmission(formData);
       setSubmitted(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
       setTimeout(() => setSubmitted(false), 5000);

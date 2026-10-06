@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { logPageVisit } from '../utils/visitorTracker';
 
 /**
  * ScrollToTop Component
@@ -12,10 +11,9 @@ const ScrollToTop = () => {
   const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
 
-  // Reset window scroll on route change & log visit
+// Reset window scroll on route change
   useEffect(() => {
     window.scrollTo(0, 0);
-    logPageVisit(pathname);
   }, [pathname]);
 
   // Monitor scroll position for button visibility
